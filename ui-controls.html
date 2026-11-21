@@ -81,7 +81,8 @@
     legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
 
     /* Text input */
-    .field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; max-width: 360px; }
+    .field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; max-width: 360px; min-width: 0; }
+    .field input, .field select, .field textarea { width: 100%; }
     .field label { font-weight: 600; font-size: 0.9rem; }
     .field input, .field textarea, .field select {
       font: inherit;
@@ -98,7 +99,7 @@
     .required { color: #dc2626; }
 
     /* Tabs */
-    .tablist { display: flex; border-bottom: 2px solid #e5e7eb; gap: 4px; }
+    .tablist { display: flex; flex-wrap: wrap; border-bottom: 2px solid #e5e7eb; gap: 4px; }
     .tab {
       font: inherit;
       padding: 8px 16px;
@@ -156,7 +157,9 @@
       font-size: 0.8rem;
       padding: 6px 10px;
       border-radius: 6px;
-      white-space: nowrap;
+      width: max-content;
+      max-width: 200px;
+      text-align: center;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.15s;
@@ -192,7 +195,7 @@
 
     /* Data grid */
     .grid-tools { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-bottom: 12px; }
-    .grid-tools .field { margin: 0; }
+    .grid-tools .field { margin: 0; flex: 1 1 180px; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; background: #fff; font-size: 0.95rem; }
     th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; }
